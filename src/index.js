@@ -5,9 +5,13 @@ let {
   View,
   StyleSheet,
   TextInput
-} = React;
+  } = React;
+
+var PureRenderMixin = React.addons.PureRenderMixin;
 
 let AutoExpandingTextInput = React.createClass({
+
+  mixins: [PureRenderMixin],
 
   propTypes: {
     onChangeHeight: React.PropTypes.func.isRequired,
@@ -26,8 +30,17 @@ let AutoExpandingTextInput = React.createClass({
     };
   },
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value === '') {
+      this.setState({
+        height: this.props.minHeight
+      });
+    }
+  },
+
   _onChange(event) {
     let curHeight = event.nativeEvent.contentSize.height;
+    if (curHeight < this.props.minHeight || curHeight > this.state.maxHeight) return;
 
     if (this.state.height !== curHeight) {
       if (this.props.onChangeHeight) {
@@ -36,7 +49,7 @@ let AutoExpandingTextInput = React.createClass({
     }
 
     this.setState({
-      height: curHeight,
+      height: curHeight
     });
   },
 
