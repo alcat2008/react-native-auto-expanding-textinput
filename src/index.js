@@ -58,6 +58,7 @@ let AutoExpandingTextInput = React.createClass({
     return (
       <TextInput
         {...this.props}
+        ref="input"
         multiline={true}
         onChange={this._onChange}
         style={[styles.default, this.props.style, {height: tmpHeight}]}
