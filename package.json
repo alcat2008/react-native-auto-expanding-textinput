@@ -1,6 +1,6 @@
 {
   "name": "react-native-auto-expanding-textinput",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A TextInput with auto expanding function for your React Native app.",
   "main": "index.js",
   "scripts": {
@@ -25,10 +25,7 @@
     "url": "https://github.com/alcat2008/react-native-loading/issues"
   },
   "homepage": "https://github.com/alcat2008/react-native-loading#readme",
-  "dependencies": {
-    "react": "^0.14.8",
-    "react-native": "^0.23.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^5.0.0",
     "chai": "^3.5.0",
