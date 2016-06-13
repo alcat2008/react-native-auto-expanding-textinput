@@ -34,7 +34,7 @@ class AutoExpandingTextInputExample extends Component {
               fontSize: 16
             }}
             minHeight={40}
-            maxHeight={44}
+            maxHeight={80}
             onChangeHeight={this._onChangeHeight}
           />
       </View>
