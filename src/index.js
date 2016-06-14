@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+  PropTypes
+} from 'react';
 import {
   View,
   StyleSheet,
@@ -20,9 +23,9 @@ export default class AutoExpandingTextInput extends Component {
   }
 
   static propTypes = {
-    onChangeHeight: React.PropTypes.func.isRequired,
-    minHeight: React.PropTypes.number.isRequired,
-    maxHeight: React.PropTypes.number
+    onChangeHeight: PropTypes.func.isRequired,
+    minHeight: PropTypes.number.isRequired,
+    maxHeight: PropTypes.number
   };
 
   static defaultProps = {};
@@ -35,7 +38,7 @@ export default class AutoExpandingTextInput extends Component {
     }
   }
 
-  _onChange(event) {
+  _onChange = (event) => {
     let curHeight = event.nativeEvent.contentSize.height;
     if (curHeight < this.props.minHeight || curHeight > this.state.maxHeight) return;
 
@@ -56,7 +59,7 @@ export default class AutoExpandingTextInput extends Component {
       <TextInput
         {...this.props}
         multiline={true}
-        onChange={this._onChange.bind(this)}
+        onChange={this._onChange}
         style={[styles.default, this.props.style, {height: tmpHeight}]}
       />
     );

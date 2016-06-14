@@ -1,6 +1,6 @@
 {
   "name": "react-native-auto-expanding-textinput",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A TextInput with auto expanding function for your React Native app.",
   "main": "index.js",
   "scripts": {
