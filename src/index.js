@@ -1,7 +1,7 @@
 import React, {
   Component,
   PropTypes,
-    PureComponent
+  PureComponent
 } from 'react';
 import {
   View,
