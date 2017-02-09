@@ -1,6 +1,7 @@
 import React, {
   Component,
-  PropTypes
+  PropTypes,
+  PureComponent
 } from 'react';
 import {
   View,
@@ -8,9 +9,7 @@ import {
   TextInput,
 } from 'react-native';
 
-import PureRenderMixin from 'react-addons-pure-render-mixin';
-
-export default class AutoExpandingTextInput extends Component {
+export default class AutoExpandingTextInput extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -19,7 +18,6 @@ export default class AutoExpandingTextInput extends Component {
       height: this.props.minHeight,
       maxHeight: this.props.maxHeight || this.props.minHeight * 3
     };
-    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
 
   static propTypes = {
