@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alcat2008/react-native-auto-expanding-textinput.git"
+    "url": "git+https://github.com/praisegeek/react-native-auto-expanding-textinput.git"
   },
   "keywords": [
     "textinput",
