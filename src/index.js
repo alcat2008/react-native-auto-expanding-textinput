@@ -39,6 +39,18 @@ export default class AutoExpandingTextInput extends PureComponent {
     }
   }
 
+  componentDidMount() {
+    this.props.onRef(this);
+  }
+
+  componentWillUnmount() {
+    this.props.onRef(undefined);
+  }
+
+  clear() {
+    this.Input.clear();
+  }
+
   _onContentSizeChange = (event) => {
     let curHeight = event.nativeEvent.contentSize.height;
     if (curHeight < this.props.minHeight || curHeight > this.state.maxHeight) return;
@@ -58,6 +70,7 @@ export default class AutoExpandingTextInput extends PureComponent {
     let tmpHeight = Math.min(this.state.maxHeight, this.state.height);
     return (
       <TextInput
+        ref={o => this.Input = o }
         {...this.props}
         multiline={true}
         onContentSizeChange={this._onContentSizeChange}
